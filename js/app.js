@@ -134,16 +134,6 @@ function randomCustNumber (min, max) {
 
 const shopNames = [seattle, tokyo, dubai, paris, lima];
 
-function getAllShopNames(){
-  for (let i = 0; i < shopNames.length; i++){
-    let currentShop = shopNames[i];
-    currentShop.getCookiesPerHour();
-  }
-}
-
-getAllShopNames();
-console.log(shopNames);
-
 function renderStore(store){
 
   const articleElem = document.createElement('article');
@@ -168,8 +158,9 @@ function renderStore(store){
 
 function renderAllStores(){
   for (let i = 0; i < shopNames.length; i++){
-    let currentStore = shopNames[i];
-    renderStore(currentStore);
+    let store = shopNames[i];
+    store.getCookiesPerHour();
+    renderStore(store);
   }
 }
 
