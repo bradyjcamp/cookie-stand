@@ -13,9 +13,29 @@ h1{
   font-size: 2vw;
 }
 
-/* article{
+article{
   text-align: center;
-} */
+}
+
+table{
+  border: 2px solid black;
+  text-align: center;
+  margin-left: 1%;
+  background: lightblue;
+}
+
+th{
+  font-weight: bold;
+  border: 2px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+td{
+  border: 2px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
 
 /* h2{
   font-size: 1.4vw;
