@@ -1,28 +1,93 @@
-body{
-  background-color: rgb(162, 220, 247);
-  font-size: 1vw;
+header h1{
+  display: inline-block;
+  background-color: rgb(97, 124, 33);
+  margin-left: 11%;
+  margin-right: 10%;
+  color: white;
+  font-size: 3vw;
+  outline-color: black;
+  outline-style: solid;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-weight: bolder;
 }
 
-
-h1{
+header {
   background-color: rgb(245, 198, 184);
+  height: 115px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  outline-color: black;
+  outline-style: solid;
+}
+
+body{
+  background-color:rgb(162, 220, 247);
+  font-size: 1vw;
+  font-family: Georgia, serif;
+}
+ #salmonPic{
+   margin-top: 6px;
+   margin-left: 4%;
+ }
+
+ a{
+   text-decoration: none;
+   color: rgb(0, 143, 7);
+   outline-style: solid;
+   outline-color: rgb(0, 0, 0);
+   background-color:rgb(245, 198, 184);
+   font-weight: bold;
+   padding-right: 5px;
+   padding-left: 5px;
+ }
+
+ #salmonPic2{
+  margin-top: 6px;
+ }
+
+ #salmonPic3{
+   margin-left: 51px;
+ }
+
+nav{
+  background: rgb(182, 172, 127);
   text-align: center;
-  margin-left: 40%;
-  margin-right: 40%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  font-size: 2vw;
+  height: 40px;
+  outline-color: black;
+  outline-style: solid;
+  margin-bottom: 50px;
+}
+
+nav ul li{
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 10%;
+  margin-left: 10%;
+  font-size: 20px;
 }
 
 article{
   text-align: center;
 }
 
+#salesHeader{
+  display: inline-block;
+  background-color: rgb(97, 124, 33);
+  margin-left: 32%;
+  color: white;
+  font-size: 3vw;
+  outline-color: black;
+  outline-style: solid;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-weight: bolder;
+}
+
 table{
   border: 2px solid black;
   text-align: center;
   margin-left: 1%;
-  background: rgb(245, 198, 184);;
+  background: rgb(245, 198, 184);
 }
 
 th{
@@ -30,29 +95,15 @@ th{
   border: 2px solid black;
   padding-left: 3px;
   padding-right: 3px;
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
 }
 
 td{
   border: 2px solid black;
   padding-left: 3px;
   padding-right: 3px;
-} */
-
-h2{
-  font-size: 1.4vw;
-  margin-bottom: 1%;
-  margin-top: 3%;
-  background-color: rgb(245, 198, 184);;
-  margin-left: 47%;
-  margin-right: 47%;
-}
-
-ul{
-  list-style-type: disc;
-  margin-left: 45%;
-  margin-right: 45%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 1%;
-}
+  font-family: Verdana, sans-serif;
+  font-size: 13px;
+} 
   
