@@ -17,21 +17,41 @@ article{
   text-align: center;
 }
 
-h2{
+table{
+  border: 2px solid black;
+  text-align: center;
+  margin-left: 1%;
+  background: lightblue;
+}
+
+th{
+  font-weight: bold;
+  border: 2px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+td{
+  border: 2px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+/* h2{
   font-size: 1.4vw;
   margin-bottom: 1%;
   margin-top: 3%;
   background-color: lightblue;
   margin-left: 47%;
   margin-right: 47%;
-}
+} */
 
-ul{
+/* ul{
   list-style-type: disc;
   margin-left: 45%;
   margin-right: 45%;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 1%;
-}
+} */
   
