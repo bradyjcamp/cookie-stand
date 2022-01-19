@@ -57,27 +57,79 @@ function randomCustNumber (min, max) {
 }
 
 
+function renderHeader (){
+
+  const tableElem = document.createElement('table');
+  storeSection.appendChild(tableElem);
+
+  const theadElem = document.createElement('thead');
+  tableElem.appendChild(theadElem);
+
+  const row1 = document.createElement('tr');
+  theadElem.appendChild(row1);
+
+  const th2Elem = document.createElement('th');
+  row1.appendChild(th2Elem);
+
+  for(let i=0; i < hours.length; i++){
+    const th1Elem = document.createElement('th');
+    th1Elem.textContent = `${hours[i]}`;
+    row1.appendChild(th1Elem); 
+  }
+  const th3Elem = document.createElement('th');
+  th3Elem.textContent = 'Daily Location Total';
+  row1.appendChild(th3Elem);
+}
+renderHeader();
+
 Store.prototype.renderStore = function(){
 
-  const articleElem = document.createElement('article');
-  storeSection.appendChild(articleElem);
+  // grab the table
 
-  const h2Elem = document.createElement('h2');
-  h2Elem.textContent = this.location;
-  articleElem.appendChild(h2Elem);
+  let table = document.querySelector('table');
 
-  const ulElem = document.createElement('ul');
-  articleElem.appendChild(ulElem);
+  // create row add to table
 
+  const row2 = document.createElement('tr');
+  table.appendChild(row2);
+
+  // first cell is name of store add to row
+
+  const th4Elem = document.createElement('th');
+  th4Elem.textContent = this.location;
+  row2.appendChild(th4Elem);
+
+
+
+  // create more cells using stores cookie data
+  // for loop (105-110) use td instead of li
+  // then add td to row
   for(let i=0; i < this.cookiesPerHour.length; i++){
-    const liElem = document.createElement('li');
-    liElem.textContent = `${hours[i]}: ${this.cookiesPerHour[i]} cookies`;
-    ulElem.appendChild(liElem);
+    const tdElem = document.createElement('td');
+    tdElem.textContent = `${this.cookiesPerHour[i]} cookies`;
+    row2.appendChild(tdElem);
   }
-  const liElem = document.createElement('li');
-  liElem.textContent=`Total: ${this.totalCookieSales} cookies`;
-  ulElem.appendChild(liElem);
+
+  //create another td (113-115) for total cookie sales per location 
+
+  const td2Elem = document.createElement('td');
+  td2Elem.textContent = `${this.totalCookieSales} cookies`;
+  row2.appendChild(td2Elem);
 };
+
+function renderFooter(){
+  let table = document.querySelector('table');
+  const footElem = document.createElement('tfoot');
+  table.appendChild(footElem);
+
+  const row3 = document.createElement('tr');
+  footElem.appendChild(row3);
+
+  const th5Elem = document.createElement('th');
+  th5Elem.textContent = 'Totals';
+  row3.appendChild(th5Elem);
+}
+renderFooter();
 
 function renderAllStores(){
   for (let i = 0; i < shopNames.length; i++){
@@ -88,4 +140,3 @@ function renderAllStores(){
 }
 
 renderAllStores();
-
