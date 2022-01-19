@@ -22,7 +22,8 @@ Store.prototype.getCustPerHour = function (){
     this.custPerHour.push(randomCustNumber(this.minCust,this.maxCust));
   }
 };
-
+//grand total outside for loop
+//let total should be inbetween for loops
 Store.prototype.getCookiesPerHour = function(){
   this.getCustPerHour();
   for (let i = 0; i < this.custPerHour.length; i++){
@@ -92,7 +93,7 @@ Store.prototype.renderStore = function(){
   // then add td to row
   for(let i=0; i < this.cookiesPerHour.length; i++){
     const tdElem = document.createElement('td');
-    tdElem.textContent = `${this.cookiesPerHour[i]} cookies`;
+    tdElem.textContent = `${this.cookiesPerHour[i]} cookies`; // remove string to just add cookie number otherwise you will get NaN
     row2.appendChild(tdElem);
   }
 
