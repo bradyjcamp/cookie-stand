@@ -13,7 +13,7 @@ function Store(location, minCust, maxCust, aveCookieSale){
   this.aveCookieSale = aveCookieSale;
   this.custPerHour = [];
   this.cookiesPerHour = [];
-  this.totalCookieSales = null;
+  this.totalCookieSales = 0;
   shopNames.push(this);
 }
 
@@ -89,7 +89,7 @@ Store.prototype.renderStore = function(){
 
 
   // create more cells using stores cookie data
-  // for loop (105-110) use td instead of li
+  // for loop
   // then add td to row
   for(let i=0; i < this.cookiesPerHour.length; i++){
     const tdElem = document.createElement('td');
@@ -97,12 +97,14 @@ Store.prototype.renderStore = function(){
     row2.appendChild(tdElem);
   }
 
-  //create another td (113-115) for total cookie sales per location 
+  //create another td for total cookie sales per location 
 
   const td2Elem = document.createElement('td');
   td2Elem.textContent = `${this.totalCookieSales} cookies`;
   row2.appendChild(td2Elem);
 };
+
+
 
 function renderFooter(){
   let table = document.querySelector('table');
@@ -115,6 +117,23 @@ function renderFooter(){
   const th5Elem = document.createElement('th');
   th5Elem.textContent = 'Totals';
   row3.appendChild(th5Elem);
+
+  let grandCookieTotal = 0;
+
+  for (let i = 0; i <hours.length; i++){
+    let hourColumnTotal = 0;
+    for (let j = 0; j < shopNames.length; j++){
+      hourColumnTotal = hourColumnTotal + parseInt(shopNames[j].cookiesPerHour[i]);
+      grandCookieTotal += hourColumnTotal;
+      console.log(typeof hourColumnTotal);
+    }
+    const td3Elem = document.createElement('td');
+    td3Elem.textContent = hourColumnTotal;
+    row3.appendChild(td3Elem);
+  }
+  const totalsFooter = document.createElement('th');
+  totalsFooter.textContent = grandCookieTotal;
+  row3.appendChild(totalsFooter);
 }
 renderFooter();
 
@@ -123,6 +142,7 @@ function renderAllStores(){
     let currentStore = shopNames[i];
     currentStore.getCookiesPerHour();
     currentStore.renderStore();
+
   }
 }
 

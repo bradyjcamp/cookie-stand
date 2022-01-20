@@ -33,6 +33,20 @@
   <main>
     <section id ="dataByLocation"></section>
   </main>
+  <h3 id="addStore">Add your own store below and see how it does!</h3>
+  <form action="/action_page.php" target="_self">
+    <fieldset>
+      <label for="locationName">What city will this store be located in?</label><br><br>
+      <input type="text" id="locationName" name="locationName"><br><br>
+      <label for="minCustPerDay">Please enter the minimum number of customers per hour in the store:</label><br><br>
+      <input type="text" id="minCustPerDay" name="minCustPerDay"><br><br>
+      <label for="maxCustPerDay">Please enter the maximum number of customers per hour in the store:</label><br><br>
+      <input type="text" id="maxCustPerDay" name="maxCustPerDay"><br><br>
+      <label for="aveCookiesBought">On average, how many cookies is each customer buying?</label><br><br>
+      <input type="text" id="aveCookiesBought" name="aveCookiesBought"><br><br>
+      <input type="submit" value="Submit"> 
+    </fieldset>
+  </form>
   <script src="js/app.js"></script>
 </body>
 </html>
