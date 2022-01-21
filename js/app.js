@@ -121,7 +121,7 @@ function renderFooter(){
   let grandCookieTotal = 0;
 
   for (let i = 0; i <hours.length; i++){
-    let hourColumnTotal = 0;
+    let hourColumnTotal = 0; //this piece of code is reset after slow loop runs through once
     for (let j = 0; j < shopNames.length; j++){
       hourColumnTotal = hourColumnTotal + parseInt(shopNames[j].cookiesPerHour[i]);
     }
@@ -164,13 +164,17 @@ function handleSubmit(event){
 
 
   let newStore = new Store (location, minCust, maxCust, aveCookies);
-
   newStore.getCookiesPerHour();
   newStore.renderStore();
+
+  // This will assign a variable that grabs out tfoot
+  let tableFooter = document.querySelector('tfoot');
+  // This below will remove the footer to avoid duplicating it, then add it again with new user data from form
+  tableFooter.remove();
   renderFooter();
 }
 
 //step 2 add my event listener to the element i want to listen to
-
-addStore.addEventListener('submit', handleSubmit); // thgis is an even handler
+//---------------------type is 'submit'----handleSubmit is the callback function
+addStore.addEventListener('submit', handleSubmit); // this is an event handler
 // ****************************************************************************
