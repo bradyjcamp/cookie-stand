@@ -127,7 +127,7 @@ function renderFooter(){
     }
     grandCookieTotal += hourColumnTotal;
     const td3Elem = document.createElement('td');
-    td3Elem.textContent = hourColumnTotal;
+    td3Elem.textContent = `${hourColumnTotal} cookies`;
     row3.appendChild(td3Elem);
     // console.log(grandCookieTotal);
   }
@@ -148,13 +148,10 @@ renderAllStores();
 renderFooter();
 
 
-
-
-
 //************* Event Handling*************
 
 // Step 1 Grab the thing I want to listn to
-const addStore = document.getElementById('add-store');//idk what to put here
+const addStore = document.getElementById('add-store');
 
 //step 3 write the even handler or callback function
 
@@ -165,13 +162,15 @@ function handleSubmit(event){
   let maxCust = event.target.maxCustPerDay.value;
   let aveCookies = event.target.aveCookiesBought.value;
 
+
   let newStore = new Store (location, minCust, maxCust, aveCookies);
 
   newStore.getCookiesPerHour();
-  newStore.renderStore();// this correct? 
+  newStore.renderStore();
+  renderFooter();
 }
 
 //step 2 add my event listener to the element i want to listen to
 
 addStore.addEventListener('submit', handleSubmit); // thgis is an even handler
-
+// ****************************************************************************
